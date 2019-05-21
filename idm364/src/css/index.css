@@ -1,13 +1,40 @@
+@font-face {
+  font-family: Monoton;
+  src: url(fonts/Monoton/Monoton-Regular.ttf);
+}
+
+@font-face {
+  font-family: Syncopate;
+  src: url(fonts/Syncopate/Syncopate-Regular.ttf);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Syncopate', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #35323A;
+}
+
+h1 {
+  font-family: 'Monoton', cursive;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a {
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid black;
+}
+
+a:visited {
+  color: initial;
+}
+
+a:hover {
+  background-color: #aafcb8;
 }
