@@ -14,10 +14,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #35323A;
+  font-family: 'Syncopate', sans-serif;
+  color: white;
 }
 
 h1 {
   font-family: 'Monoton', cursive;
+  letter-spacing: .3rem;
+  font-size: 3rem;
 }
 
 code {
@@ -37,4 +41,9 @@ a:visited {
 
 a:hover {
   background-color: #aafcb8;
+}
+
+footer {
+  border-top: 2px solid #aafcb8;
+  background-color: black;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Inventory from './Inventory';
 class Menu extends Component {
     render() {
         return (
