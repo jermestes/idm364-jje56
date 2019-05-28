@@ -13,7 +13,7 @@ class Nav extends Component {
             <img src="https://placeholder.pics/svg/1000x500/DEDEDE/555555/Hero%20image%20(smiley%20treats)" className="App-logo" alt="Best friends, Best food" />
             <h1>The BAKED Sale</h1>
             <nav>
-              <ul>
+              <ul className="navbar-links">
                 <Link to="/">Menu</Link>
                 <Link to="/Order">Order (0)</Link>
                 <Link to="/Inventory">Inventory</Link>

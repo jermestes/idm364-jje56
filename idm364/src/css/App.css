@@ -16,8 +16,11 @@ nav {
   width: 100%;
 }
 
-ul {
+li {
   list-style-type: none;
+}
+
+.navbar-links {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -27,7 +30,7 @@ ul {
   border-bottom: 2px solid black;
 }
 
-li {
+.navbar-links li {
   background-color: white;
   color: black;
 }
@@ -35,4 +38,5 @@ li {
 li:hover {
   background-color: #aafcb8;
   cursor: pointer;
+  color: black;
 }
