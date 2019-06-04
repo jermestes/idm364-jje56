@@ -3,58 +3,7 @@ import base from '../base';
 import firebase from 'firebase';
 import '../css/index.css';
 
-const itemTypes = [
-    'Brownie',
-    'Combo',
-    'Cookie',
-    'Milkshake',
-    'Muffin',
-    'Pie'];
-
 class Inventory extends Component {
-    /*constructor() {
-        super();
-        this.state = {
-            items: []
-        };
-    }*/
-
-    state = {
-        items: []
-    };
-
-    componentDidMount() {
-        const dbRef = firebase.database().ref('items')
-        dbRef.on('value', (snapshot) => {
-            let items = snapshot.val();
-            //let itemTypes = [];
-            let realState = [];
-            for (let item in items) {
-                /*realState.push({
-                    Name: items[item].name,
-                    Price: items[item].price,
-                    Availability: items[item].available,
-                    Description: items[item].description,
-                    Image: items[item].image,
-                    Type: items[item].type
-                }
-                
-                itemTypes.push({
-                    Type: items[item].type
-                })*/
-            }
-
-            this.ref = base.syncState('items', {
-                context: this,
-                state: 'items'
-            });
-
-            /*this.setState({
-                items: realState
-            })*/
-        })
-    } 
-
     render() {
         return (
             <main id="inventory-page">
@@ -70,12 +19,11 @@ class Inventory extends Component {
                 </div>
                 
                 <div className="inventory-forms">
-                {this.state.items.map((item) => {
+                {this.props.appState.items.map((item) => {
                     return (
                         <form className="item-inventory-form">
                             <div className="form-image-control">
-                                <img src={item.image}></img>
-                                <button className="change-image"></button>
+                                <img src={item.image} alt={item.name}></img>
                             </div>
 
                             <div className="form-area small-inputs" >
@@ -94,7 +42,7 @@ class Inventory extends Component {
                             </div>
 
                             <div className="form-area item-caption">
-                                <label for="item_description"></label>
+                                <label for="item_description">Description</label>
                                 <input type="text-area" name="item_description" value={item.description}></input>
                             </div>
                         </form>

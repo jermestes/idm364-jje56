@@ -94,18 +94,20 @@ footer p {
 
 #inventory-forms-sidebar-tabs li {
   border-color: white;
-  border-width: 0 1px 1px 0;
+  border-width: 0 0 1px 0;
   border-style: solid;
   padding: .5rem 0 .5rem 0;
 }
 
 @media screen and (max-width: 34.6875rem) {
-  #inventory-forms-sidebar-tabs li {
-    border-width: 0 0 1px 0;
-  }
-
   .item-inventory-form {
     display: flex;
     flex-flow: column wrap;
+  }
+}
+
+@media screen and (min-width: 51.25rem) {
+  #inventory-forms-sidebar-tabs li {
+    border-width: 0 1px 1px 0;
   }
 }
