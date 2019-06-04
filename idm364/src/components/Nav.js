@@ -37,7 +37,34 @@ class Nav extends Component {
         });
     })
   }
-  
+
+  //Event to sync any inventory form change to Firebase
+  inventoryChange = event => {
+    window.alert('test');
+    /*const changedItem = {
+      ...this.state.item,
+      [event.currentTarget.name]: event.currentTarget.value
+    };  */  
+  }
+
+  //Event to add a item(s) to the current order  
+  addToOrder = event => {
+    window.alert('test');
+    /*const changedItem = {
+      ...this.state.item,
+      [event.currentTarget.name]: event.currentTarget.value
+    };  */  
+  }
+
+  //Event for increase or decrease 
+  fieldIncrement = event => {
+    window.alert('test');
+    /*const changedItem = {
+      ...this.state.item,
+      [event.currentTarget.name]: event.currentTarget.value
+    };  */  
+  }
+
   render() {
     return (
       <div>
@@ -47,16 +74,22 @@ class Nav extends Component {
           <nav>
             <ul className="navbar-links">
               <Link to="/">Menu</Link>
-              <Link to="/Order">Order {this.state.orderNumItems}</Link>
+              <Link to="/Order">Order ({this.state.orderNumItems})</Link>
               <Link to="/Inventory">Inventory</Link>
             </ul>
           </nav> 
         </header>
         
         <Switch>
-          <Route path="/" exact render={ ()=> <Menu appState={this.state}/> } />
-          <Route path="/Order" render={ ()=> <Order appState={this.state}/>} />
-          <Route path="/Inventory" render={ ()=> <Inventory appState={this.state}/>} />
+          <Route path="/" exact render={ ()=> 
+          <Menu appState={this.state} addToOrder={this.addToOrder.bind(this)}/> } />
+
+          <Route path="/Order" render={ ()=> 
+          <Order appState={this.state} fieldIncrement={this.fieldIncrement.bind(this)}/>} />
+          
+          <Route path="/Inventory" render={ ()=> 
+          <Inventory appState={this.state} inventoryChange={this.inventoryChange.bind(this)} 
+          fieldIncrement={this.fieldIncrement.bind(this)}/>}/>
         </Switch>
       </div>
     );

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import Inventory from './Inventory';
 
 class Menu extends Component {
-
     render() {
         return (
             <main id="menu-page">
@@ -11,10 +9,9 @@ class Menu extends Component {
                 {this.props.appState.items.map((item) => {
                     return (
                         <div className="menu-item">
-                            <img src={item.image}></img>
+                            <img src={item.image} alt={item.name}></img>
                             <h3>{item.name}</h3>
-                            <p>{item.price}</p>
-                            <p>{item.description}</p>
+                            <p>${item.price.toFixed(2)} - {item.description}</p>
                         </div>
                     )
                 })}

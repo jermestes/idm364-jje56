@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import base from '../base';
-import firebase from 'firebase';
 import '../css/index.css';
 
 class Inventory extends Component {
@@ -28,22 +26,26 @@ class Inventory extends Component {
 
                             <div className="form-area small-inputs" >
                                 <label for="item_name">Name</label>
-                                <input type="text" name="item_name" value={item.name}></input>
+                                <input type="text" name="item_name" value={item.name}
+                                onChange={this.props.inventoryChange}></input>
                                 
                                 <label for="item_price">Price</label>
-                                <input type="number" name="item_price" value={item.price}></input>
+                                <input type="number" name="item_price" value={item.price.toFixed(2)}
+                                onChange={this.props.inventoryChange}></input>
                                 
                                 <label for="item_stock"># Available</label>
                                 <div className="availability-control">
                                     <button className="decrease-amount">-</button>
-                                    <input type="number" name="item_stock" value={item.available}></input>
+                                    <input type="number" name="item_stock" value={item.available}
+                                    onChange={this.props.inventoryChange}></input>
                                     <button className="increase-amount">+</button>
                                 </div>
                             </div>
 
                             <div className="form-area item-caption">
                                 <label for="item_description">Description</label>
-                                <input type="text-area" name="item_description" value={item.description}></input>
+                                <input type="text-area" name="item_description" value={item.description}
+                                onChange={this.props.inventoryChange}></input>
                             </div>
                         </form>
                     )
