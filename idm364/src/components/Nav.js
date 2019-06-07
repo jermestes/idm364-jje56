@@ -6,6 +6,7 @@ import firebase from 'firebase';
 import Menu from './Menu';
 import Order from './Order';
 import Inventory from './Inventory';
+import logo from '../images/logo.svg';
 
 class Nav extends Component {
   constructor() {
@@ -41,35 +42,46 @@ class Nav extends Component {
   //Event to sync any inventory form change to Firebase
   inventoryChange = event => {
     window.alert('test');
-    /*const changedItem = {
-      ...this.state.item,
-      [event.currentTarget.name]: event.currentTarget.value
-    };  */  
+    const changedItem = this.state.items;
   }
 
-  //Event to add a item(s) to the current order  
-  addToOrder = event => {
+  //Event to reset the menu and inventory to original values
+  resetStock = event => {
     window.alert('test');
-    /*const changedItem = {
-      ...this.state.item,
-      [event.currentTarget.name]: event.currentTarget.value
-    };  */  
+  }
+
+  //Event to remove item from the Firebase
+  deleteFromInventory = event => {
+    window.alert('test');
+    const changedItem = this.state.items;
+  }
+
+  //Event to filter inventory forms (and possibly menu) to only show items of a specific type
+  itemTypeFilter = event => {
+    window.alert('test');
+    const changedItem = this.state.items;
+  }
+
+  //Event to add item(s) to the current order  
+  addToOrder = event => {
+    this.setState({orderNumItems: this.state.orderNumItems + 1})
+  }
+
+  //Event to remove item from the current order  
+  removeFromOrder = event => {
+    window.alert('test');
   }
 
   //Event for increase or decrease 
   fieldIncrement = event => {
     window.alert('test');
-    /*const changedItem = {
-      ...this.state.item,
-      [event.currentTarget.name]: event.currentTarget.value
-    };  */  
   }
 
   render() {
     return (
       <div>
         <header className="App-header">
-          <img src="https://placeholder.pics/svg/1000x500/DEDEDE/555555/Hero%20image%20(smiley%20treats)" className="App-logo" alt="Best friends, Best food" />
+          <img src={logo} className="App-logo" alt="Best friends, Best food" />
           <h1>The BAKED Sale</h1>
           <nav>
             <ul className="navbar-links">
@@ -85,11 +97,13 @@ class Nav extends Component {
           <Menu appState={this.state} addToOrder={this.addToOrder.bind(this)}/> } />
 
           <Route path="/Order" render={ ()=> 
-          <Order appState={this.state} fieldIncrement={this.fieldIncrement.bind(this)}/>} />
+          <Order appState={this.state} fieldIncrement={this.fieldIncrement.bind(this)} 
+          removeFromOrder={this.removeFromOrder.bind(this)}/>} />
           
           <Route path="/Inventory" render={ ()=> 
           <Inventory appState={this.state} inventoryChange={this.inventoryChange.bind(this)} 
-          fieldIncrement={this.fieldIncrement.bind(this)}/>}/>
+          fieldIncrement={this.fieldIncrement.bind(this)} itemTypeFilter={this.itemTypeFilter.bind(this)}
+          deleteFromInventory={this.deleteFromInventory.bind(this)}/>}/>
         </Switch>
       </div>
     );

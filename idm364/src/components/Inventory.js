@@ -35,10 +35,12 @@ class Inventory extends Component {
                                 
                                 <label for="item_stock"># Available</label>
                                 <div className="availability-control">
-                                    <button className="decrease-amount">-</button>
+                                    <button className="decrease-amount"
+                                    onClick={this.props.fieldIncrement}>-</button>
                                     <input type="number" name="item_stock" value={item.available}
                                     onChange={this.props.inventoryChange}></input>
-                                    <button className="increase-amount">+</button>
+                                    <button className="increase-amount"
+                                    onClick={this.props.fieldIncrement}>+</button>
                                 </div>
                             </div>
 
@@ -46,6 +48,8 @@ class Inventory extends Component {
                                 <label for="item_description">Description</label>
                                 <input type="text-area" name="item_description" value={item.description}
                                 onChange={this.props.inventoryChange}></input>
+                                <button className="delete"
+                                    onClick={this.props.deleteFromInventory}>DELETE</button>
                             </div>
                         </form>
                     )

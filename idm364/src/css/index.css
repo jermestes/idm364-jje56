@@ -50,12 +50,13 @@ a:hover {
 }
 
 footer {
-  border-top: 2px solid white;
-  background-color: black;
+  border-top: 2px solid  #aafcb8;;
+  background-color: #aafcb8;
 }
 
 footer p {
   margin-bottom: 0;
+  color: black;
 }
 
 #inventory-page  {
@@ -110,4 +111,31 @@ footer p {
   #inventory-forms-sidebar-tabs li {
     border-width: 0 1px 1px 0;
   }
+}
+
+.menu-catalog {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.menu-item {
+  margin-bottom: 1.5rem;
+  padding: 0 .5rem 0 .5rem;
+}
+
+.delete , .decrease-amount {
+  background-color: red;
+}
+
+.increase-amount {
+  background-color: green;
+}
+
+input {
+  text-align: center;
+}
+
+label {
+  text-align: left;
 }
