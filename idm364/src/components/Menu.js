@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class Menu extends Component {
-    //Loops through the all the items in the state and renders a div for each individual item
     render() {
         return (
             <main id="menu-page">

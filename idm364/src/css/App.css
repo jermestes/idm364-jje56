@@ -3,14 +3,12 @@
 }
 
 .App-logo {
-  max-width: 100%;
-  max-height: 50vh;
-
+  width: 100%;
 }
 
 .App-header {
-  background-color: #aafcb8;
-  color: black;
+  background-color: #35323A;
+  color: #aafcb8;
 }
 
 nav {
