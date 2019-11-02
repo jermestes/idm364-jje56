@@ -1,3 +1,10 @@
+# The BAKEd Sale
+For the final project of my Interactive App Design class at Drexel, we were asked to create a real-time food-ordering app with ReactJS. The app required interfaces showing:
+* all of the available items that can be ordered.
+* a running tally of the current ordered items.
+* back end controls for managing all aspects of inventory items.
+
+# The default Create-React-App info...
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

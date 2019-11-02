@@ -1,14 +1,22 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #35323A;
+  color: white;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 25vmin;
+  margin: 0 auto 2rem;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background: linear-gradient(0deg, #AAFCB8 0%, #35323A 100%);;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +25,75 @@
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+h1 {
+  align-self: flex-start;
+  padding: 0 0 0 10%;
 }
+
+header button {
+  border-radius: 50px;
+  background-color: black;
+  border: 2px solid pink;
+  color: white;
+  padding: .75rem;
+  cursor: pointer;
+}
+
+nav {
+  width: 80%;
+  text-align: center;
+}
+ul {
+  list-style: none;
+  margin: auto;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  top: -1rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #D7FFF1;
+}
+li {
+  border: 1px solid black;
+  padding: .5rem;
+  color: black;
+}
+
+li:hover {
+  background-color: #AAFCB8;
+}
+
+.activeNavLink {
+  background-color: #AAFCB8;
+}
+
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: .5rem 1rem;
+  align-content: center;
+  background-color: #AAFCB8;
+  color: black;
+}
+
+
+
+a, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+  ul {
+    display: grid;
+    grid-template: auto / 1fr 1fr 1fr;
+    background-color: white;
+    width: 80%;
+  }
+}
+
