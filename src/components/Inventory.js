@@ -8,11 +8,15 @@ import ItemEdit from './ItemEdit';
 //AND MAKE A DROPDOWN THAT LISTS ALL CHOICES OF ITEMS ARRAY
 
 class Inventory extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            itemIndex: 0
+            itemIndex: this.props.appState[this.props.itemIndex]
         }
+    }
+
+    selectorIndexChange = event => {
+        this.setState({itemIndex: event.target.value});
     }
 
     render(props) {
@@ -20,10 +24,10 @@ class Inventory extends Component {
             <main>
                 <h2>Inventory</h2>
                 <div className="inventory-forms">
-                    <select>
+                    <select value={this.state.itemIndex} onChange={this.selectorIndexChange}>
                         {this.props.appState.items.map((item,index) => { 
                             return (
-                                <option onClick={this.props.itemIndexChange} value={index}>{item.name}</option>
+                                <option key={index} onClick={this.props.itemIndexChange} value={index}>{item.name}</option>
                             )
                         })}
                     </select>
@@ -31,7 +35,7 @@ class Inventory extends Component {
                     <button onClick={this.props.resetStock}>Reset Stock</button>
 
                     <ItemEdit appState={this.props.appState}
-                    targetItem = {this.props.appState.items[this.state.itemIndex]}
+                    targetItem = {this.props.appState.items[this.props.appState.itemIndex]}
                     inventoryChange={this.props.inventoryChange} 
                     fieldIncrement={this.props.fieldIncrement} 
                     deleteFromInventory={this.props.deleteFromInventory} 

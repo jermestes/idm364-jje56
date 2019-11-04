@@ -8,14 +8,19 @@ class Order extends Component {
         return (
             <main>
                 <h2>This Order</h2>
-                {this.props.appState.orderList.map((item) => {
-                    return (
-                        <div className="order-item">
-                            <ol><li>({/*item.quantity*/}) {/*item.name*/} hi | {/*item.subtotal*/}</li></ol>
-                        </div>
-                    )
-                })}
-                
+                <div className="order-slip">
+                    <ol className="order-item">
+                    {this.props.appState.orderList.map((item,index) => {
+                        return (
+                            <li key={index}>
+                                <h5>{item.quantity} {item.name}(s)</h5> 
+                                <p>${item.subTotal}</p>
+                                <button value={index} onClick={this.props.removeFromOrder}>Remove</button>
+                            </li>
+                        )
+                    })}
+                    </ol>
+                </div>
             </main>
         );
     }

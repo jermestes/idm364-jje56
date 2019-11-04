@@ -1,26 +1,38 @@
 import React, { Component } from 'react';
 
 class Menu extends Component {
+    constructor() {
+        super();
+        this.state = {
+            quantity: 1 
+        }
+    }
+    adjustQuantity = event => {
+        if(typeof(parseInt(event.target.value)) !== 'number') {
+            console.log(parseInt(event.target.value));
+
+            console.log('entered a non-number');
+
+        } else {
+            this.setState({quantity: event.target.value});
+        }
+        
+    }
+
     render() {
         return (
             <main>
                 <h2>Menu</h2>
                 <div className="menu-catalog">
-                {this.props.appState.items.map((item) => {
+                {this.props.appState.items.map((item,index) => {
                     return (
-                        <div className="menu-item">
+                        <div className="menu-item" key={index}>
                             <img src={item.image} alt={item.name}></img>
                             <h3>{item.name}</h3>
-                            <p>${item.price} - {item.description}</p>
-                            <div className="availability-control">
-                                <button className="decrease-amount"
-                                onClick={this.props.fieldIncrement}>-</button>
-                                <input type="number" name="item_stock" value="1"
-                                onChange={this.props.addToOrder} key={item}></input>
-                                <button className="increase-amount"
-                                onClick={this.props.fieldIncrement}>+</button>
-                            </div>
-                            <button onClick={this.props.addToOrder}>Add To Order</button>
+                            <p>{item.description}</p>
+                            <p name="item_stock" value={item.price}>${item.price} each</p>
+                            <input type="number" name="item_stock" defaultValue={1}></input>
+                            <button onClick={this.props.addToOrder} name={index}>Add To Order</button>
                         </div>
                     )
                 })}
