@@ -27,10 +27,10 @@ class Menu extends Component {
                 {this.props.appState.items.map((item,index) => {
                     return (
                         <div className="menu-item" key={index}>
-                            <img src={item.image} alt={item.name}></img>
+                            <img src={require(`../images/${item.image}`)} alt={item.name} className="main-img"></img>
                             <h3>{item.name}</h3>
+                            <p name="item_stock" value={item.price}>(${item.price} each)</p>
                             <p>{item.description}</p>
-                            <p name="item_stock" value={item.price}>${item.price} each</p>
                             <input type="number" name="item_stock" defaultValue={1}></input>
                             <button onClick={this.props.addToOrder} name={index}>Add To Order</button>
                         </div>

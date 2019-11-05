@@ -1,8 +1,21 @@
+@font-face {
+  font-family: 'Monoton';
+  src: url(./fonts/Monoton/Monoton-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Syncopate';
+  src: url(./fonts/Syncopate/Syncopate-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(./fonts/Open_Sans/OpenSans-Regular.ttf);
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #35323A;
@@ -24,7 +37,10 @@ body {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+h1 {
+  font-family: 'Monoton';
+  font-weight: 300;
+}
 main h1 {
   align-self: flex-start;
   padding: 0 0 0 10%;
@@ -53,10 +69,12 @@ ul {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-color: #D7FFF1;
 }
-li {
+.nav-li {
   border: 1px solid black;
   padding: .5rem;
   color: black;
+  font-family: 'Syncopate',sans-serif;
+  font-weight: 500;
 }
 
 li:hover {
@@ -70,12 +88,21 @@ li:hover {
 a, a:visited {
   color: white;
   text-decoration: none;
+  font-size: 1rem;
+  font-family: 'Syncopate';
+  align-self: center;
+  transition: all ease-in 250ms;
 }
+
+a:hover {
+  color: #D7FFF1;
+}
+
 footer {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  padding: .5rem 1rem;
+  padding: .25rem 10%;
   align-content: center;
   background-color: #AAFCB8;
   color: black;
@@ -94,6 +121,7 @@ main {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
+  align-items: space-around;
 }
 
 .menu-item {
@@ -138,4 +166,24 @@ option {
 
 .order-slip {
   background-color: white;
+  color: black;
+  margin: 0 10%;
+  padding: .5rem 0;
+  min-height: 25vh;
+}
+
+.main-img {
+  width: 300px;
+}
+
+#form-pic {
+  height: 300px;
+}
+
+input[textarea] {
+  height: 4rem;
+}
+
+.menu-item {
+  margin-bottom: .75rem;
 }

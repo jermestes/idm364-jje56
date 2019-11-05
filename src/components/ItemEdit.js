@@ -13,7 +13,7 @@ class ItemEdit extends Component {
     render(props) {
         return (
             <form className="item-inventory-form">
-                <img src={this.props.appState.items[this.props.appState.itemIndex].image} alt={this.props.appState.items[this.props.appState.itemIndex].name}></img>
+                <img id="form-pic" src={require(`../images/${this.props.appState.items[this.props.appState.itemIndex].image}`)} alt={this.props.appState.items[this.props.appState.itemIndex].name}></img>
 
                 <div className="form-area small-inputs" >
                     <label htmlFor="name">Name</label>
@@ -37,8 +37,8 @@ class ItemEdit extends Component {
 
                 <div className="form-area item-caption">
                     <label htmlFor="description">Description</label>
-                    <input type="text-area" name="description" value={this.props.appState.items[this.props.appState.itemIndex].description}
-                    onChange={this.LiveChange}></input>
+                    <textarea name="description" value={this.props.appState.items[this.props.appState.itemIndex].description}
+                    onChange={this.LiveChange}></textarea>
                     <button className="delete"
                         onClick={this.props.deleteFromInventory}>DELETE</button>
                 </div>
