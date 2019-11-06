@@ -29,15 +29,10 @@ class App extends Component {
         itemIndex: 0,
         orderList: []
     };
-  }
 
-  //Get the state connected to Firebase db
-  componentDidMount() {
-    const dbRef = firebase.database().ref('items')
+    const dbRef = firebase.database().ref('items');
     dbRef.on('value', (snapshot) => {
-      let peekaboo = [1,2,3];
       let items = snapshot.val();
-      console.log(peekaboo);
       console.log(items);
       //sync app state and database together so 
       this.ref = base.syncState('items', {
@@ -45,6 +40,10 @@ class App extends Component {
           state: 'items'
       });
     })
+  }
+
+  //Get the state connected to Firebase db
+  componentDidMount() {
   }
 
   /*EVENT LISTENERS (onClick, onChange etc.)*/
@@ -77,8 +76,7 @@ class App extends Component {
 
   //Event to remove item from the Firebase
   deleteFromInventory = event => {
-    window.alert('test');
-    const changedItem = this.state.items;
+    console.log('test');
   }
 
   //Event to add item(s) to the current order  
@@ -109,7 +107,7 @@ class App extends Component {
 
   //Event for increase or decrease 
   fieldIncrement = event => {
-    window.alert('test');
+    console.log('test');
   }
 
   render() {

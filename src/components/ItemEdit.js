@@ -39,8 +39,6 @@ class ItemEdit extends Component {
                     <label htmlFor="description">Description</label>
                     <textarea name="description" value={this.props.appState.items[this.props.appState.itemIndex].description}
                     onChange={this.LiveChange}></textarea>
-                    <button className="delete"
-                        onClick={this.props.deleteFromInventory}>DELETE</button>
                 </div>
             </form>
         );
