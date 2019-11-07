@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import ItemEdit from './ItemEdit';
 
-//NOTE FOR TOMORROW
-//MAKE ONE FORM
-//WITH VARIABLE THAT CHECKS FOR INDEX OF THE ARRAY
-//AND THE FORM WILL REPLACE THE VALUES OF EACH INPUT WITH THE CORRESPONDING VALUES OF CURRENT INDEX
-//AND MAKE A DROPDOWN THAT LISTS ALL CHOICES OF ITEMS ARRAY
-
 class Inventory extends Component {
     constructor(props) {
         super(props);
@@ -25,11 +19,12 @@ class Inventory extends Component {
         if(inventoryStatus.length == 0) {
             inventoryRender = <p>Loading inventory...</p>
         } else {
-            inventoryRender = <div className="inventory-forms">
+            inventoryRender = 
+                <div className="inventory-forms">
                     <div id="inventory-btns-container">
                         <button id="reset-stock-btn" className="inventory-btn" onClick={this.props.resetStock}>Reset Stock</button>
                         
-                        <select className="inventory-btn" value={this.state.itemIndex} onChange={this.selectorIndexChange}>
+                        <select className="inventory-btn" value={this.props.appState.itemIndex} onChange={this.props.itemIndexChange}>
                             {this.props.appState.items.map((item,index) => { 
                                 return (
                                     <option key={index} onClick={this.props.itemIndexChange} value={index}>{item.name}</option>
@@ -44,7 +39,8 @@ class Inventory extends Component {
                     fieldIncrement={this.props.fieldIncrement} 
                     deleteFromInventory={this.props.deleteFromInventory} 
                     resetStock={this.props.resetStock}
-                    itemIndexChange={this.props.itemIndexChange} />
+                    itemIndexChange={this.props.itemIndexChange}
+                    preventNonNums={this.props.preventNonNums} />
                 </div>                
         }
         return (

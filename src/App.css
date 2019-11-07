@@ -28,7 +28,7 @@ body {
 }
 
 .App-header {
-  background: linear-gradient(0deg, #AAFCB8 0%, #35323A 100%);;
+  background: linear-gradient(0deg, #AAFCB8 0%, #35323A 100%);
   min-height: 50vh;
   display: flex;
   flex-direction: column;
@@ -51,17 +51,7 @@ button:focus {
   outline: none;
 }
 
-header button {
-  border-radius: 50px;
-  background-color: black;
-  border: 2px solid pink;
-  color: white;
-  padding: .75rem;
-  cursor: pointer;
-}
-
 nav {
-  width: 80%;
   text-align: center;
 }
 #navbar {
@@ -94,7 +84,7 @@ a, a:visited {
   color: white;
   text-decoration: none;
   font-size: 1rem;
-  font-family: 'Syncopate';
+  font-family: 'Open Sans';
   align-self: center;
   transition: all ease-in 250ms;
 }
@@ -127,12 +117,24 @@ main {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  align-items: space-around;
+  align-items: center;
+}
+
+.menu-item:first-child {
+  align-self: start;
+}
+
+.menu-item:nth-child(2) {
+  align-self: start;
 }
 
 .menu-item {
   width: 300px;
   padding: .5rem;
+}
+
+.ordered-item {
+  border-bottom: 2px solid #35323A;
 }
 
 @media screen and (min-width: 600px) {
@@ -141,6 +143,12 @@ main {
     grid-template: auto / 1fr 1fr 1fr;
     background-color: white;
     width: 80%;
+  }
+
+  .ordered-item {
+    display: grid;
+    grid-template: auto / 1fr 1fr 1fr;
+    border: none;
   }
 }
 
@@ -177,8 +185,9 @@ option {
   background-color: white;
   color: black;
   margin: 0 10%;
-  padding: .5rem 0;
+  padding: .5rem 10%;
   min-height: 25vh;
+  text-align: left;
 }
 
 .main-img {
@@ -201,6 +210,7 @@ input[textarea] {
   display: flex;
   flex-flow: row-reverse wrap;
   justify-content: center;
+  align-self: flex-start;
 }
 
 #inventory-btns-container {
@@ -237,12 +247,62 @@ form {
   padding: .5rem;
   border-color: #AAFCB8;
   color: white;
-  background-color: transparent;
+  background: linear-gradient(180deg, #474545 0%, #870058 100%);
   cursor: pointer;
   font-family: 'Syncopate';
 }
 
 #reset-stock-btn:hover {
-  background-color: #AAFCB8;
+  background: linear-gradient(180deg, #474545 0%, #870058 50%);
+}
+
+ol li:hover {
+  background-color: transparent;
+}
+
+#order-conclusion {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+#order-conclusion p {
+  margin: 0 2rem;
+}
+
+.order-item-price, .order-slip button {
+  text-align: center;
+}
+
+.ordered-item button {
+  cursor: pointer;
+  border: 1px solid red;
+  color: red;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.ordered-item button:hover {
+  background-color: red;
   color: black;
+}
+
+.ordered-item div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.form-area input, textarea {
+  width: 100%;
+}
+
+.item-inventory-form {
+  background-color: #474545;
+  border: 2px solid #AAFCB8;
+  padding: 1.5rem;
 }

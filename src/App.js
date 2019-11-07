@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import logo from './logo.svg';
 
-import './App.css';
+import './main.css';
 
 //The navigation, supported by React Router
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
@@ -20,7 +20,6 @@ import Inventory from './components/Inventory';
 
 
 class App extends Component {
-  /*LIFECYCLE EVENTS (mount/unmount etc.)*/
   //Initialize the app with an empty state that will be filled with database info
   constructor() {
     super();
@@ -46,7 +45,6 @@ class App extends Component {
   componentDidMount() {
   }
 
-  /*EVENT LISTENERS (onClick, onChange etc.)*/
   //Event to sync any inventory form change to Firebase
   inventoryChange = (key,updatedItem) => {
     //make copy of the current state
@@ -61,6 +59,11 @@ class App extends Component {
     this.setState({items: restock});
   }
 
+  //Event to reset the menu and inventory to original values
+  resetOrder = () => {
+    this.setState({orderList: []});
+  }
+
   //Change item index to keep the select bar in-sync with the item-edit-form
   itemIndexChange = event => {
     //make copy of app's itemIndex state
@@ -72,11 +75,6 @@ class App extends Component {
     console.log(newIndexState);
     //set state of itemIndex to the updated copy
     this.setState({itemIndex: newIndexState});
-  }
-
-  //Event to remove item from the Firebase
-  deleteFromInventory = event => {
-    console.log('test');
   }
 
   //Event to add item(s) to the current order  
@@ -105,9 +103,15 @@ class App extends Component {
     console.log(this.state.orderList);
   }
 
-  //Event for increase or decrease 
-  fieldIncrement = event => {
-    console.log('test');
+  //Make sure order and stock quantity can't be NaN or decimal
+  preventNonNums = event => {
+    //If the key != arrows, backspace, or numbers
+    if((event.which < 37 || event.which > 40) && (event.which < 48 || event.which > 57) && event.which !== 8 && event.which !== 46) {
+      event.preventDefault();
+      console.log('prevented, foo');
+    } else {
+      console.log('turkey');
+    }
   }
 
   render() {
@@ -125,20 +129,20 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" render={ ()=> 
-          <Menu appState={this.state} addToOrder={this.addToOrder.bind(this)}/> } />
+          <Menu appState={this.state} addToOrder={this.addToOrder.bind(this)}
+          preventNonNums={this.preventNonNums.bind(this)}/> } />
           
           <Route path="/order" render={ ()=> 
-          <Order appState={this.state} fieldIncrement={this.fieldIncrement.bind(this)} 
-          removeFromOrder={this.removeFromOrder.bind(this)}/>} />
+          <Order appState={this.state} removeFromOrder={this.removeFromOrder.bind(this)}
+          resetOrder={this.resetOrder.bind(this)}/>} />
 
           <Route path="/inventory" render={ ()=> 
           <Inventory appState={this.state} 
           itemIndexChange={this.itemIndexChange.bind(this)} 
           inventoryChange={this.inventoryChange.bind(this)} 
           targetItem = {this.state.items[this.state.itemIndex]}
-          fieldIncrement={this.fieldIncrement.bind(this)} 
-          deleteFromInventory={this.deleteFromInventory.bind(this)} 
-          resetStock={this.resetStock.bind(this)} /> } /> 
+          resetStock={this.resetStock.bind(this)} 
+          preventNonNums={this.preventNonNums.bind(this)}/> } /> 
 
         </Switch>
 
