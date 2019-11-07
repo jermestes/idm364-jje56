@@ -42,7 +42,7 @@ class Menu extends Component {
                             <h3>{item.name}</h3>
                             <p name="item_price" value={item.price}>${item.price} each</p>
                             <p>{item.description}</p>
-                            <input maxLength='2' min="1" type="number" name="item_quantity" defaultValue={1}
+                            <input pattern="[0-9]*" maxLength='2' min="1" type="number" name="item_quantity" defaultValue={1}
                             onKeyDown={this.props.preventNonNums}></input>
                             {button}
                         </div>

@@ -53,13 +53,14 @@ class ItemEdit extends Component {
 
                     <div>
                         <label htmlFor="price">Price</label>
-                        <input type="number" name="price" min="0.01" step="0.01" value={this.props.appState.items[this.props.appState.itemIndex].price}
+                        <input type="number" name="price" min="0.01" step="0.01" 
+                        value={this.props.appState.items[this.props.appState.itemIndex].price}
                         onChange={this.LiveChange} onKeyDown={this.noExtraDec}></input>
                     </div>
 
                     <div className="availability-control">
                         <label htmlFor="stock"># Available</label>
-                        <input type="number" name="available" min="0" step="1" value={this.props.appState.items[this.props.appState.itemIndex].available}
+                        <input pattern="[0-9]*" type="number" name="available" min="0" step="1" value={this.props.appState.items[this.props.appState.itemIndex].available}
                         onChange={this.LiveChange} onKeyDown={this.props.preventNonNums}></input>
                     </div>
                 </div>
