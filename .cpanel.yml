@@ -5,4 +5,4 @@ deployment:
     #- /bin/cp -r build $DEPLOYPATH
     - ls
     - ls -a /bin/
-    - /bin/cp * build/* $DEPLOYPATH
+    - /bin/cp build/* -r $DEPLOYPATH
