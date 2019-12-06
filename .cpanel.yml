@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home2/jermeste/public_html/bakesale
-    - /bin/build/ cp * $DEPLOYPATH
+    - /bin/build/cp * $DEPLOYPATH
