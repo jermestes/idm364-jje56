@@ -50,7 +50,7 @@ a, a:visited {
   color: white;
   text-decoration: none;
   font-size: 1rem;
-  font-family: 'Open Sans';
+  font-family: 'Syncopate';
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -218,6 +218,16 @@ main h2 {
 
 .menu-item button:active {
   border-color: black;
+}
+
+.menu-item button:disabled {
+  background-color: lightgrey;
+  cursor: unset;
+}
+
+.menu-item button:disabled:hover, .menu-item button:disabled:active {
+  background-color: lightgrey;
+  border-color: lightgrey;
 }
 
 .menu-item input {
@@ -477,6 +487,7 @@ footer {
       align-content: center;
   background-color: #AAFCB8;
   color: black;
+  font-family: 'Syncopate';
 }
 
 footer a {

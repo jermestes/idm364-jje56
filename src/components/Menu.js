@@ -32,7 +32,7 @@ class Menu extends Component {
                 <div className="menu-catalog">
                 {this.props.appState.items.map((item,index) => {
                     if(item.available < 1) {
-                        button = <button onClick={this.props.addToOrder} name={index} disabled>Out of stock</button>; 
+                        button = <button onClick={this.props.addToOrder} name={index} disabled="disabled">Out of stock</button>; 
                     } else {
                         button = <button onClick={this.props.addToOrder} name={index}>Add To Order</button>;
                     }

@@ -49,7 +49,7 @@ a, a:visited {
     color: white;
     text-decoration: none;
     font-size: 1rem;
-    font-family: 'Open Sans';
+    font-family: 'Syncopate';
     align-self: center;
     transition: all ease-in 250ms;
     &:hover {
@@ -172,6 +172,14 @@ main {
         }
         &:active {
             border-color: black;
+        }
+        &:disabled {
+            background-color: lightgrey;
+            cursor: unset;
+            &:hover, &:active {
+                background-color: lightgrey;
+                border-color: lightgrey;
+            }
         }
     }
     input {
@@ -357,6 +365,7 @@ footer {
     align-content: center;
     background-color: $brandGreen;
     color: black;
+    font-family: 'Syncopate';
     a {
         color: black;
     }

@@ -14,11 +14,15 @@ class Inventory extends Component {
     }
 
     render(props) {
+        //inventoryRender holds what to display on inventory section based on inventory status
         let inventoryRender;
+        //the inventory information from the main app.js state
         let inventoryStatus = this.props.appState.items;
         if(inventoryStatus.length == 0) {
+            //Have a loading message while getting the inventory
             inventoryRender = <p>Loading inventory...</p>
         } else {
+            //Generate the realtime edit form with selector holding all the available items to choose from
             inventoryRender = 
                 <div className="inventory-forms">
                     <div id="inventory-btns-container">

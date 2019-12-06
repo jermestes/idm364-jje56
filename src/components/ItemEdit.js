@@ -30,6 +30,8 @@ class ItemEdit extends Component {
         //1) the input value already includes a period
         else if(event.which == 190 && (dotBreaks == true || dotBreaks2 == true)) {
             event.preventDefault();
+            console.log(dotBreaks);
+            console.log(dotBreaks2);
             console.log('already a period here')
             } 
             
