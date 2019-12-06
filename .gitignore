@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+# letting build be included for syncing with server /build
 
 # misc
 .DS_Store

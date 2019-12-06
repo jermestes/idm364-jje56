@@ -4,5 +4,5 @@ deployment:
     - export DEPLOYPATH=/home2/jermeste/public_html/bakesale
     #- /bin/cp -r build $DEPLOYPATH
     - ls
-    - find /bin/
     - ls -a /bin/
+    - /bin/cp build/* $DEPLOYPATH

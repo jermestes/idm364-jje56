@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/static/css/main.30b30d45.chunk.css",
+    "main.js": "/static/js/main.cbee93b7.chunk.js",
+    "main.js.map": "/static/js/main.cbee93b7.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.79f90b29.js",
+    "runtime-main.js.map": "/static/js/runtime-main.79f90b29.js.map",
+    "static/js/2.ce546d0b.chunk.js": "/static/js/2.ce546d0b.chunk.js",
+    "static/js/2.ce546d0b.chunk.js.map": "/static/js/2.ce546d0b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.203accb3519759b61391a25875158527.js": "/precache-manifest.203accb3519759b61391a25875158527.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.30b30d45.chunk.css.map": "/static/css/main.30b30d45.chunk.css.map",
+    "static/media/main.css": "/static/media/Syncopate-Regular.5f2a6299.ttf",
+    "static/media/apple-pie.jpg": "/static/media/apple-pie.f0f7c88c.jpg",
+    "static/media/banana-muffin.jpg": "/static/media/banana-muffin.18aede70.jpg",
+    "static/media/blueberry-muffin.jpg": "/static/media/blueberry-muffin.ca57457d.jpg",
+    "static/media/brownie-cookie.jpg": "/static/media/brownie-cookie.58651929.jpg",
+    "static/media/brownies.jpg": "/static/media/brownies.e7c1f774.jpg",
+    "static/media/bw-milkshake.jpg": "/static/media/bw-milkshake.9f8e7fa1.jpg",
+    "static/media/cherry-pie.jpg": "/static/media/cherry-pie.a7654750.jpg",
+    "static/media/choc-cupcake.jpg": "/static/media/choc-cupcake.5dfd17e1.jpg",
+    "static/media/chocolate-milkshake.jpg": "/static/media/chocolate-milkshake.b440e748.jpg",
+    "static/media/chocolatechip-cookie.jpg": "/static/media/chocolatechip-cookie.6da8cfb6.jpg",
+    "static/media/cookiecream-milkshake.jpg": "/static/media/cookiecream-milkshake.381327c2.jpg",
+    "static/media/logo.svg": "/static/media/logo.11e331ff.svg",
+    "static/media/oreo-pie.jpg": "/static/media/oreo-pie.5d48c65c.jpg",
+    "static/media/pumpkin-muffin.jpg": "/static/media/pumpkin-muffin.b4ed781d.jpg",
+    "static/media/pumpkin-pie.jpg": "/static/media/pumpkin-pie.3b583739.jpg",
+    "static/media/sugar-cookie.jpg": "/static/media/sugar-cookie.a90085b1.jpg",
+    "static/media/vanilla-cupcake.jpg": "/static/media/vanilla-cupcake.87451d92.jpg",
+    "static/media/vanilla-milkshake.jpg": "/static/media/vanilla-milkshake.2cf013bd.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.79f90b29.js",
+    "static/js/2.ce546d0b.chunk.js",
+    "static/css/main.30b30d45.chunk.css",
+    "static/js/main.cbee93b7.chunk.js"
+  ]
+}
