@@ -129,15 +129,15 @@ class App extends Component {
         <Nav orderNumItems={this.state.orderList.length}/>
 
         <Routes>
-          <Route exact path="/" render={ ()=> 
+          <Route exact path="/" element={
           <Menu appState={this.state} addToOrder={this.addToOrder.bind(this)}
           preventNonNums={this.preventNonNums.bind(this)}/> } />
           
-          <Route path="/order" render={ ()=> 
+          <Route path="/order" element={
           <Order appState={this.state} removeFromOrder={this.removeFromOrder.bind(this)}
           resetOrder={this.resetOrder.bind(this)}/>} />
 
-          <Route path="/inventory" render={ ()=> 
+          <Route path="/inventory" element={
           <Inventory appState={this.state} 
           itemIndexChange={this.itemIndexChange.bind(this)} 
           inventoryChange={this.inventoryChange.bind(this)} 
