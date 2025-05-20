@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/idm364-jje56/static/css/main.a95cfa58.css",
+    "main.js": "/idm364-jje56/static/js/main.412b189c.js",
+    "static/media/brownies.jpg": "/idm364-jje56/static/media/brownies.24715cbe511cfa4f5d84.jpg",
+    "static/media/oreo-pie.jpg": "/idm364-jje56/static/media/oreo-pie.19286b3ad9696b635032.jpg",
+    "static/media/pumpkin-muffin.jpg": "/idm364-jje56/static/media/pumpkin-muffin.73179cc208f24c6477ae.jpg",
+    "static/media/blueberry-muffin.jpg": "/idm364-jje56/static/media/blueberry-muffin.46f4f921abafb9cb9652.jpg",
+    "static/media/cookiecream-milkshake.jpg": "/idm364-jje56/static/media/cookiecream-milkshake.56f2ee07554993354a34.jpg",
+    "static/media/cherry-pie.jpg": "/idm364-jje56/static/media/cherry-pie.401b2ec08671e0f0e75d.jpg",
+    "static/media/bw-milkshake.jpg": "/idm364-jje56/static/media/bw-milkshake.9ab6f063594cae41704f.jpg",
+    "static/media/apple-pie.jpg": "/idm364-jje56/static/media/apple-pie.2bd3ed47f257564d3bde.jpg",
+    "static/media/pumpkin-pie.jpg": "/idm364-jje56/static/media/pumpkin-pie.1c2b4523bb6e82b3a52f.jpg",
+    "static/media/sugar-cookie.jpg": "/idm364-jje56/static/media/sugar-cookie.451aa91cc414f82e0ad0.jpg",
+    "static/media/logo.svg": "/idm364-jje56/static/media/logo.e144ebc286aa29b6e430689a8684174e.svg",
+    "static/media/vanilla-milkshake.jpg": "/idm364-jje56/static/media/vanilla-milkshake.23fe40dc547b8ea1c466.jpg",
+    "static/media/chocolatechip-cookie.jpg": "/idm364-jje56/static/media/chocolatechip-cookie.8598a67900a82f4c2121.jpg",
+    "static/media/chocolate-milkshake.jpg": "/idm364-jje56/static/media/chocolate-milkshake.85acfd894b4860fc3a25.jpg",
+    "static/media/choc-cupcake.jpg": "/idm364-jje56/static/media/choc-cupcake.2c1f8a7c78c99920b0b4.jpg",
+    "static/media/Syncopate-Regular.ttf": "/idm364-jje56/static/media/Syncopate-Regular.a02c5c1c1c20122376c8.ttf",
+    "static/media/brownie-cookie.jpg": "/idm364-jje56/static/media/brownie-cookie.dac02e36cfbeb66adf99.jpg",
+    "static/media/vanilla-cupcake.jpg": "/idm364-jje56/static/media/vanilla-cupcake.305ff619632505b8b201.jpg",
+    "static/media/OpenSans-Regular.ttf": "/idm364-jje56/static/media/OpenSans-Regular.1b0809d519837cb7aad3.ttf",
+    "static/media/banana-muffin.jpg": "/idm364-jje56/static/media/banana-muffin.753db360694b92f16e33.jpg",
+    "static/media/Monoton-Regular.ttf": "/idm364-jje56/static/media/Monoton-Regular.7dedae9293901010ebba.ttf",
+    "index.html": "/idm364-jje56/index.html",
+    "main.a95cfa58.css.map": "/idm364-jje56/static/css/main.a95cfa58.css.map",
+    "main.412b189c.js.map": "/idm364-jje56/static/js/main.412b189c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a95cfa58.css",
+    "static/js/main.412b189c.js"
+  ]
+}
