@@ -1,6 +1,6 @@
 {
   "name": "idm364-jje56",
-  "homepage": "https://bakesale.jermestes.com",
+  "homepage": "https://jermestes.github.io/bakesale",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,7 +14,9 @@
     "start": "react-scripts start",
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,6 +34,7 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "gh-pages": "^6.3.0"
   }
 }

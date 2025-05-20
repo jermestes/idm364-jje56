@@ -117,7 +117,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router className="App">
+      <Router className="App" basename="/bakesale">
         <header className="App-header">
           <div id="intro-info-bar">
             <h1>The BAKEd Sale</h1>
