@@ -4,12 +4,13 @@ import logo from './logo.svg';
 import './main.css';
 
 //The navigation, supported by React Router
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Nav from './components/Nav';
 
 //The necessary modules for inventory data
-import base from './base';
-import firebase from 'firebase';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import { base } from './base'; // from your refactored firebase.js
+import { set } from 'firebase/database';
 import restock from './restock';
 
 //The 3 main interfaces of the site
@@ -28,30 +29,30 @@ class App extends Component {
         itemIndex: 0,
         orderList: []
     };
-
-    const dbRef = firebase.database().ref('items');
-    dbRef.on('value', (snapshot) => {
-      let items = snapshot.val();
-      console.log(items);
-      //sync app state and database together so 
-      this.ref = base.syncState('items', {
-          context: this,
-          state: 'items'
-      });
-    })
   }
 
   //Get the state connected to Firebase db
   componentDidMount() {
+    const dbRef = ref(base, 'items');
+  
+    // One-way sync from DB → state
+    onValue(dbRef, (snapshot) => {
+      const items = snapshot.val() || [];
+      this.setState({ items });
+    });
   }
+  
 
   //Event to sync any inventory form change to Firebase
-  inventoryChange = (key,updatedItem) => {
-    //make copy of the current state
-    const stateToBe = {...this.state.items};
-    //change value of copied state's [key]'th element to value of updated form element 
+  inventoryChange = (key, updatedItem) => {
+    const stateToBe = { ...this.state.items };
     stateToBe[key] = updatedItem;
-    this.setState({items: stateToBe});
+  
+    this.setState({ items: stateToBe });
+  
+    // Push the whole updated items state to Firebase
+    const dbRef = ref(base, 'items');
+    set(dbRef, stateToBe);
   }
 
   //Event to reset the menu and inventory to original values
@@ -127,7 +128,7 @@ class App extends Component {
 
         <Nav orderNumItems={this.state.orderList.length}/>
 
-        <Switch>
+        <Routes>
           <Route exact path="/" render={ ()=> 
           <Menu appState={this.state} addToOrder={this.addToOrder.bind(this)}
           preventNonNums={this.preventNonNums.bind(this)}/> } />
@@ -144,10 +145,10 @@ class App extends Component {
           resetStock={this.resetStock.bind(this)} 
           preventNonNums={this.preventNonNums.bind(this)}/> } /> 
 
-        </Switch>
+        </Routes>
 
         <footer>
-          <p>©2019 The Baked Sale</p>
+          <p>©2025 The Baked Sale</p>
         </footer>
 
       </Router>
